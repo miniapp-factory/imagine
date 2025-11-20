@@ -3,11 +3,10 @@ import { useState, useContext } from 'react';
 import { Button } from '@/components/ui/button';
 import { Share } from '@/components/share';
 import { url } from '@/lib/metadata';
-import { MiniAppContext } from '@/components/context/miniapp-provider';
+import { MiniAppContextProvider } from '@/components/context/miniapp-provider';
 
 export default function Mint() {
-  const context = useContext(MiniAppContext);
-  const { sdk, isInMiniApp } = context ?? {};
+  const context = useContext(MiniAppContextProvider);
   const [loading, setLoading] = useState(false);
   const [imageUrl, setImageUrl] = useState<string | null>(null);
 
